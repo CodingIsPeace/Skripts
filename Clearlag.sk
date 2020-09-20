@@ -1,0 +1,64 @@
+options:
+	Prefix: &3(&bClearlag&3)
+	PrefixWarning: &3(&bClearlag&3)
+
+	# Alert Messages #
+
+	Warning: &f&lWarning&f, &6ground items will be removed in
+
+every 8 minutes:
+	broadcast "{@Warning} &f&l1 &bminute!"
+	wait 57 seconds
+	broadcast "{@Warning} &f&l3 &bseconds!"
+	wait 1 seconds
+	broadcast "{@Warning} &f&l2 &bseconds!"
+	wait 1 seconds
+	broadcast "{@Warning} &f&l1 &bsecond!"
+	wait 1 seconds
+	make server execute command "/clear1 lag"
+
+command /clearlag [<text>]:
+	trigger:
+		if arg-1 is not set:
+			message "&3-----------(&b&lClearlag Options&3)-----------"
+			message "&4- &8/&3clearlag &bclear &f- (Clears entities from your worlds)"
+			message "&4- &8/&3clearlag &bkillmobs &f- (Clears mobs from your worlds)"
+			message "&3-------------------------------------------"
+
+		if player has permission "clear.lag":
+			if arg 1 is "clear":
+				clear {_count}
+				loop all arrows:
+					clear loop-entity
+					add 1 to {_count}
+				loop entities:
+					loop-entity is a dropped item
+					clear loop-entity
+					add 1 to {_count}
+				if {_count} is not set:
+					set {_count} to 0
+				broadcast "{@Prefix} &7You just removed &3&l%{_count}% &bentities!"
+
+		if player has permission "lagg.killmobs":
+			if arg 1 is "killmobs":
+				broadcast "{@Prefix} &7Mobs have been &bremoved!"
+				loop entities:
+					if loop-entity is a creature:
+						clear loop-entity
+					if loop-entity is a slime:
+						clear all slimes
+
+command /clear1 [<text>]: 
+	trigger:	
+		if arg 1 is "lag":
+			clear {_count}
+			loop all arrows:
+				clear loop-entity
+				add 1 to {_count}
+			loop entities:
+				loop-entity is a dropped item
+				clear loop-entity
+				add 1 to {_count}
+			if {_count} is not set:
+				set {_count} to 0
+			broadcast "&7Removed &3&l%{_count}% &bEntities!"
