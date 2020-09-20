@@ -1,0 +1,82 @@
+command /reboot [<text>]:
+	trigger:
+		if player has permission "reboot.use":
+			if arg 1 is not set:
+				send "&c/reboot 30s | 1m"
+			if arg 1 is "30s":
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 30s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 20 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 10s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 5 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 4s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 3s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 2s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 1s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1.5 seconds
+				execute console command "restart"
+			if arg 1 is "1m":
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 60s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 50 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 10s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 5 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 4s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 3s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 2s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 1s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1.5 seconds
+				execute console command "restart"
+			if arg 1 is "5s":
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 5s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 4s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 3s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 2s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1 seconds
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				broadcast "&cServer will Reboot in 1s."
+				broadcast "&4&l✦&4&m---------------------------&4&l✦"
+				wait 1.5 seconds
+				execute console command "restart"
+		else:
+			send "&cNo Permission!"
+			stop 	
