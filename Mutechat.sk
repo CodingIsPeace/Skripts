@@ -1,0 +1,40 @@
+#Config
+options:
+
+    # The version of the plugin
+
+    Version: 2.1
+
+    # The broadcast message that appears when a player mutes the chat
+
+    ChatMuted: &aThe chat has been muted by %player's displayname%
+
+    # The permission node, eg; mutechat.test
+
+    PermissionNode: mutechat.command
+
+    # The bypass permission node (to allow players to talk whilst chat is muted)
+
+    BypassNode: mutechat.bypass
+
+    # The message when a player doesnt have the permission to /mutechat
+
+    NoPermissionMsg: &7You do not have the required &epermission &7to use this command. If you think this is a problem, please contact the developer or owner.
+
+    # The broadcast message that appears when a player unmutes the chat
+
+    ChatUnMuted: &aThe chat has been unmuted by %player's displayname%
+
+
+command /mutechat:
+    permission: {@PermissionNode}
+    permission message: {@NoPermissionMsg}
+    trigger:
+        if {chatmuted} is not set:
+            set {chatmuted} to true
+            broadcast "{@ChatMuted}"
+            stop trigger
+
+        if {chatmuted} is set:
+            clear {chatmuted}
+            broadcast "{@ChatUnMuted}"
